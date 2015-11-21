@@ -2,6 +2,7 @@
 app.Card = Backbone.Model.extend({
   defaults: {
     "value": 0,
-    "suit": ""
+    "suit": "",
+    "facedown": true
   }
 })
