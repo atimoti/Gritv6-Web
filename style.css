@@ -1,6 +1,11 @@
 * {
   border: 1px black solid;
 }
+
+body {
+  height: 1000px;
+}
+
 #mainPanel {
   display: flex;
   width: 70%;
