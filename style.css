@@ -71,6 +71,7 @@ body, html {
 @media all and (max-width: 600px){
   #sidePanel {
     display: none;
+    background-color: red;
   }
   #mainPanel {
     width: 100%;
