@@ -9,10 +9,10 @@ body {
   min-width: 100%;
 }
 
-#main {
+#mainPanel {
   border: 1px solid black;
   display: flex;
-  min-height: 100%;
+  min-height: calc(100%-2px);
   min-width: 70%;
 }
 
@@ -23,7 +23,7 @@ body {
   min-width: 100%;
 }
 
-#mainPanel {
+#main {
   background-color: #55dd55;
   display: flex;
   min-height: 80%;
