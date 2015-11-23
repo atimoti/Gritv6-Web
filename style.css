@@ -68,7 +68,6 @@ body, html {
   width: 100%;
 }
 
-
 @media all and (max-width: 600px){
   #sidePanel {
     display: none;
