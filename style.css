@@ -10,59 +10,59 @@ body {
 #mainPanel {
   display: flex;
   height: 100%;
-  width: 70%;
+  width: 68%;
 }
 
 #navbar {
   display: flex;
   height: 10%;
-  width: 100%;
+  width: 98%;
 }
 
 #game {
   display: flex;
   height: 90%;
-  width: 100%;
+  width: 98%;
 }
 
 #opponent {
   display: flex;
   height: 50%;
-  width: 100%;
+  width: 98%;
 }
 
 #home {
   display: flex;
   height: 50%;
-  width: 100%;
+  width: 98%;
 }
 
 .hand {
   display: flex;
   height: 25%;
-  width: 100%;
+  width: 98%;
 }
 
 .board {
   display: flex;
   height: 25%;
-  width: 100%;
+  width: 98%;
 }
 
 #SidePanel {
   display: flex;
   height: 100%;
-  width: 30%;
+  width: 28%;
 }
 
 #opponent {
   display: flex;
   height: 50%;
-  width: 100%;
+  width: 98%;
 }
 
 #home {
   display: flex;
   height: 50%;
-  width: 100%;
+  width: 98%;
 }
