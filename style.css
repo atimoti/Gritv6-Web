@@ -45,13 +45,13 @@ body {
 .hand {
   border: 1px solid red;
   display: flex;
-  height: 25%;
+  height: 20%;
   width: 100%;
 }
 
 .board {
   display: flex;
-  height: 25%;
+  height: 20%;
   width: 100%;
 }
 
