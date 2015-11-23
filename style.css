@@ -68,11 +68,14 @@ body, html {
   width: 100%;
 }
 
-@media handheld, screen and (max-width: 37em){
+@media handheld, screen and (max-width: 40em){
   #sidePanel {
     display: none;
   }
   #mainPanel {
     width: 100%;
+  }
+  #home {
+    background-color: red;
   }
 }
