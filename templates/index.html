@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Grit</title>
-	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
 	<div id="sidePanel">
@@ -29,7 +29,7 @@
 				</div>
 				<div class="board">
 					<div class="slot">
-						<img src="../Grit Cards/2H.svg" height=100%>
+						<img src="Grit Cards/2H.svg" height=100%>
 					</div>
 					<div class="slot">slot</div>
 					<div class="slot">slot</div>
@@ -38,7 +38,7 @@
 			<div id="home">
 				<div class="board">
 					<div class="slot">
-						<img src="../Grit Cards/back.svg" height=100%>
+						<img src="{{url_for('static', filename='Grit Cards/back.svg')}}" height=100%>
 					</div>
 					<div class="slot">
 						<!--<img src="Grit Cards/back.svg" height=100%>-->
