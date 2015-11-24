@@ -1,0 +1,107 @@
+/* CSS reset*/
+body, html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+/*end reset*/
+
+#mainPanel {
+  height: 100%;
+  width: 70%;
+}
+
+#navbar {
+  background-color: #FF4;
+  height: 10%;
+  width: 100%;
+}
+
+#main {
+  background-color: #5d5;
+  height: 90%;
+  width: 100%;
+}
+
+#opponent {
+  height: 50%;
+  width: 100%;
+}
+
+#home {
+  height: 50%;
+  width: 100%;
+}
+
+.hand {
+  height: 50%;
+  width: 100%;
+}
+
+.board {
+  display: flex;
+  height: 50%;
+  width: 100%;
+}
+
+.slot {
+  border: 1px solid blue;
+  height: calc(100% - 2px);
+  width: calc( (100% - 4px)/3);
+}
+
+#sidePanel {
+  background-color: #ccc;
+  height: 100%;
+  width: 30%;
+}
+
+#opponent {
+  height: 50%;
+  width: 100%;
+}
+
+#home {
+  height: 50%;
+  width: 100%;
+}
+
+@media handheld, screen and (max-width: 40em) {
+  #sidePanel {
+    display: none;
+  }
+  #mainPanel {
+    width: 100%;
+  }
+  #home {
+    background-color: red;
+  }
+}
+
+@media (orientation: landscape), screen and (min-width: 75em){
+  #home, #opponent {
+    display: flex;
+  }
+  .board {
+    height: 100%;
+    width: 60%;
+    order: 1;
+  }
+  
+  .hand {
+  height: 100%;
+  width: 40%;
+  order: 2;
+  }
+  
+  #sidePanel {
+    width: 15%;
+  }
+  
+  #mainPanel {
+    width: 85%;
+  }
+  
+}
