@@ -9,19 +9,25 @@ import pymongo
 import os
 
 app = Flask(__name__)
+app.debug = True
 
-if os.getenv('MONGOLAB_URI') is not None: # on Heroku
-    mongolab_uri = os.getenv('MONGOLAB_URI')
-    db = mongolab_uri[mongolab_uri.rfind('/')+1:] #extract the database name
-    connect(db, host=mongolab_uri)
-else: # on Cloud9
-    connect('mempydemo')
+_game = {"hmm":1}
 
-@app.route('/')
+# MONGOLAB_URI = 
+if os.getenv('MONGOLAB_URI'):
+    _game = {"hello":1}
+
+connection = pymongo.MongoClient('MONGOLAB_URI')
+db = connection.grit
+games = db.games
+
+# games.insert_one({"players": [1, 2]})
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    # games.insert({"players": [3, 4]})
+    # _game = games.find()
+    return render_template('index.html', game = _game)
     
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 8080))
-    host = os.getenv('IP', '0.0.0.0')
-    app.run(port=port, host=host)
+    app.run(port=8080, host='0.0.0.0')
