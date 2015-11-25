@@ -11,13 +11,13 @@ import os
 app = Flask(__name__)
 app.debug = True
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 # MONGOLAB_URI = 
 if os.getenv('MONGOLAB_URI'):
     _game = {"hello":1}
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))
