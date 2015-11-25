@@ -8,6 +8,10 @@ app.debug = True
 def index():
     return 'Hello MEMpy'
 
+# MONGOLAB_URI = 
+if os.getenv('MONGOLAB_URI'):
+    _game = {"hello":1}
+
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))
     host = os.getenv('IP', '0.0.0.0')
