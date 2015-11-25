@@ -4,7 +4,7 @@ from flask import (
     jsonify,
     render_template,
     request )
-# from mongoengine import connect
+from mongoengine import connect
 import pymongo
 import os
 
@@ -13,16 +13,18 @@ app.debug = True
 
 _game = {"hmmm":1}
 
+
 connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
 db = connection.grit
 games = db.games
-games.insert({"players": [5, 6]})
-_game = games.find_one()
+games.remove()
+# games.insert({"players": [5, 6]})
+# _game = games.find_one()
 
 
 @app.route('/')
 def index():
-    return render_template('index.html', game = _game)
+    return render_template('index.html')
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))
