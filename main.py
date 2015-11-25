@@ -1,4 +1,11 @@
-from flask import Flask
+from flask import (
+    Flask,
+    abort,
+    jsonify,
+    render_template,
+    request )
+from mongoengine import connect
+import pymongo
 import os
 
 app = Flask(__name__)
@@ -6,7 +13,7 @@ app.debug = True
 
 @app.route('/')
 def index():
-    return 'Hello MEMpy'
+    return render_template('index.html')
 
 # MONGOLAB_URI = 
 if os.getenv('MONGOLAB_URI'):
@@ -17,15 +24,6 @@ if __name__ == '__main__':
     host = os.getenv('IP', '0.0.0.0')
     app.run(port=port, host=host)
 
-# from flask import (
-#     Flask,
-#     abort,
-#     jsonify,
-#     render_template,
-#     request )
-# from mongoengine import connect
-# import pymongo
-# import os
 
 # app = Flask(__name__)
 # app.debug = True
