@@ -16,9 +16,9 @@ _game = {"hmm":1}
 if os.getenv('MONGOLAB_URI'):
     _game = {"hello":1}
 
-connection = pymongo.MongoClient('MONGOLAB_URI')
-db = connection.grit
-games = db.games
+# connection = pymongo.MongoClient('MONGOLAB_URI')
+# db = connection.grit
+# games = db.games
 
 # games.insert_one({"players": [1, 2]})
 
