@@ -13,9 +13,12 @@ app.debug = True
 
 _game = {"hmmm":1}
 
-# MONGOLAB_URI = 
-if os.getenv('MONGOLAB_URI'):
-    _game = {"hello":1}
+connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
+db = connection.grit
+games = db.games
+games.insert({"players": [5, 6]})
+_game = games.find_one()
+
 
 @app.route('/')
 def index():
