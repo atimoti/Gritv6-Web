@@ -19,7 +19,7 @@ if os.getenv('MONGOLAB_URI'):
 
 @app.route('/')
 def index():
-    return render_template('index.html', game = _gam)
+    return render_template('index.html', game = _game)
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))
