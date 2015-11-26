@@ -24,7 +24,7 @@ _game = games.find_one()
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', game = _game)
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))
