@@ -18,8 +18,8 @@ connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
 db = connection.grit
 games = db.games
 games.remove()
-# games.insert({"players": [5, 6]})
-# _game = games.find_one()
+games.insert_one({"players": [5, 6]})
+_game = games.find_one()
 
 
 @app.route('/')
