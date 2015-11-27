@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width = device-width, intial-scale = 1">
 	<title>Grit</title>
 	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
@@ -20,7 +21,7 @@
 	</div> 
 	<div id="mainPanel">
 		<nav id="navbar">
-			{{game}}
+			<!--{{game}}-->
 		</nav>
 		<div id="main">
 			<div id="opponent">
@@ -29,7 +30,7 @@
 				</div>
 				<div class="board">
 					<div class="slot">
-						<img src="{{url_for('static', filename='Grit_Cards/2H.svg')}}" height=100%>
+						<svg src="{{url_for('static', filename='Grit_Cards/2H.svg')}}">
 					</div>
 					<div class="slot">slot</div>
 					<div class="slot">slot</div>
@@ -59,7 +60,7 @@
 	<script src="{{url_for('static', filename='js/models/game.js')}}"></script>
 	<script type="text/javascript">
 		console.log(grit);
-		new grit.Views.Game();
+		new grit.Views.Game(game);
 	</script>
 </body>
 </html>
