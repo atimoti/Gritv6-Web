@@ -23,12 +23,12 @@ _game = games.find_one()
 
 @app.route('/')
 def index():
-    return render_template('index.html', game = _game)
+    return render_template('index.html', game = {"_id":"hello world"})
     
-# @app.route('/test/<gameID>')
-# def game():
-#     _game = games.find_one({"_id": gameID})
-#     return render_template('game.html', game = _game)
+@app.route('/test/<gameID>')
+def game():
+    _game = games.find_one({"_id": gameID})
+    return render_template('game.html', game = _game)
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))
