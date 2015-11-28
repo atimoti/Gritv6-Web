@@ -18,7 +18,7 @@ games.remove()
 games.insert_one({{"gameID":1}, {"players": [{"rich": {"rating": 1200, "gamesPlayed": 0}}, {"anthony": {"rating": 1200, "gamesPlayed": 0}}]}})
 games.insert_one({"players": [8, 9]})
 
-_game = games.find_one()
+# _game = games.find_one()
 
 
 @app.route('/')
