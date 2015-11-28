@@ -16,9 +16,9 @@ db = connection.grit
 games = db.games
 games.remove()
 games.insert_one({"_id":1, "players": [{"rich": {"rating": 1200, "gamesPlayed": 0}}, {"anthony": {"rating": 1200, "gamesPlayed": 0}}]})
-games.insert_one({"players": [8, 9]})
+# games.insert_one({"players": [8, 9]})
 
-_game = games.find_one()
+# _game = games.find_one()
 
 
 @app.route('/')
@@ -27,7 +27,7 @@ def index():
     
 @app.route('/test/<gameID>')
 def game(gameID):
-    _game = games.findOne({"_id": gameID})
+    _game = games.find_one({"_id": gameID})
     return render_template('index.html', game = _game)
 
 if __name__ == '__main__':
