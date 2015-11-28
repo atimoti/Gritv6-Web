@@ -15,7 +15,7 @@ connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
 db = connection.grit
 games = db.games
 games.remove()
-games.insert_one({{"gameID":1}, {"players": [{"rich": {"rating": 1200, "gamesPlayed": 0}}, {"anthony": {"rating": 1200, "gamesPlayed": 0}}]}})
+games.insert_one({"_id":1, "players": [{"rich": {"rating": 1200, "gamesPlayed": 0}}, {"anthony": {"rating": 1200, "gamesPlayed": 0}}]})
 games.insert_one({"players": [8, 9]})
 
 _game = games.find_one()
@@ -27,7 +27,7 @@ def index():
     
 # @app.route('/test/<gameID>')
 # def game():
-#     _game = games.find_one({"id": gameID})
+#     _game = games.find_one({"_id": gameID})
 #     return render_template('game.html', game = _game)
 
 if __name__ == '__main__':
