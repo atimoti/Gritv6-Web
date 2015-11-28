@@ -25,7 +25,7 @@ games.insert_one({"players": [8, 9]})
 def index():
     return render_template('index.html', game = {"_id" : "hello world!"})
     
-@app.route('/<gameID>')
+@app.route('/test/<gameID>')
 def game():
     _game = games.find_one({"id": gameID})
     return render_template('game.html', game = _game)
