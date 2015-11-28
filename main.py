@@ -25,10 +25,10 @@ games.insert_one({"players": [8, 9]})
 def index():
     return render_template('index.html')
     
-@app.route('/test/<gameID>')
-def game():
-    _game = games.find_one({"id": gameID})
-    return render_template('game.html', game = _game)
+# @app.route('/test/<gameID>')
+# def game():
+#     _game = games.find_one({"id": gameID})
+#     return render_template('game.html', game = _game)
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))
