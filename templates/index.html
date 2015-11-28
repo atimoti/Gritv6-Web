@@ -21,7 +21,7 @@
 	</div> 
 	<div id="mainPanel">
 		<nav id="navbar">
-			<!--{{game}}-->
+			{{game}}
 		</nav>
 		<div id="main">
 			<div id="opponent">
@@ -60,7 +60,7 @@
 	<script src="{{url_for('static', filename='js/models/game.js')}}"></script>
 	<script type="text/javascript">
 		console.log(grit);
-		new grit.Views.Game(game);
+		new grit.Views.Game();
 	</script>
 </body>
 </html>

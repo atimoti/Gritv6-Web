@@ -11,9 +11,6 @@ import os
 app = Flask(__name__)
 app.debug = True
 
-_game = {"hmmm":1}
-
-
 connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
 db = connection.grit
 games = db.games
@@ -32,6 +29,11 @@ _game = games.find_one()
 @app.route('/')
 def index():
     return render_template('index.html', game = _game)
+    
+@app.route('/<gameID>')
+def game():
+    _game = games.find_one({"id": gameID})
+    return render_template('game.html', game = _game)
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))

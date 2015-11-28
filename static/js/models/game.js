@@ -5,7 +5,7 @@ grit.Models.Game = Backbone.Model.extend({
         Players: []
     },
     
-    // url: "../server.py",
+    url: "../server.py",
     
     initialize: function () {
         this.game = this.fetch();
