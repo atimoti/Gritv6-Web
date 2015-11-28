@@ -25,7 +25,7 @@ games.insert_one({"_id":1, "players": [{"rich": {"rating": 1200, "gamesPlayed": 
 def index():
     return render_template('index.html', game = {"_id":"hello world"})
     
-@app.route('/test/<int:gameID>')
+@app.route('/game/<int:gameID>')
 def game(gameID):
     _game = games.find_one({"_id" : gameID})
     return render_template('index.html', game = _game)
