@@ -27,7 +27,7 @@ def index():
     
 @app.route('/test/<gameID>')
 def game(gameID):
-    _game = games.find_one({"_id": gameID})
+    _game = games.find({"_id": gameID})
     return render_template('index.html', game = _game)
 
 if __name__ == '__main__':
