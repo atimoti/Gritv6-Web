@@ -1,6 +1,6 @@
 /* global grit, Backbone */
 
-grit.Router = Backbone.Router.extend({
+grit.Router = new Backbone.Router.extend({
     routes: {
         "game/:gameID" : "startGame"
     },
@@ -8,4 +8,6 @@ grit.Router = Backbone.Router.extend({
     startGame : function (gameID){
         console.log("todo get game with ID: " + gameID)
     }
-})
+});
+
+Backbone.history.start();
