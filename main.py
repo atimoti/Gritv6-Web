@@ -8,7 +8,7 @@ from mongoengine import connect
 import pymongo
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 app.debug = True
 
 connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
@@ -26,7 +26,7 @@ def index():
     _games = jsonify(games.find())
     return render_template('index.html', games = _games)
     
-@app.route('/game/<int:gameID>', methods:['POST'])
+@app.route('/game/<int:gameID>', methods:['GET', 'POST'])
 def game(gameID):
     _game = games.find_one({"_id" : gameID})
     return jsonify( _game )
