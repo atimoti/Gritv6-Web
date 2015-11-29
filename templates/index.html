@@ -30,7 +30,7 @@
 				</div>
 				<div class="board">
 					<div class="slot">
-						<svg src="{{url_for('static', filename='Grit_Cards/2H.svg')}}">
+						<img src="{{url_for('static', filename='Grit_Cards/2H.svg')}}">
 					</div>
 					<div class="slot">slot</div>
 					<div class="slot">slot</div>
@@ -55,12 +55,15 @@
 	<script src="{{url_for('static', filename='js/lib/underscore.js')}}"></script>
 	<script src="{{url_for('static', filename='js/lib/jquery.js')}}"></script>
 	<script src="{{url_for('static', filename='js/lib/backbone.js')}}"></script>
-	<script src="{{url_for('static', filename='js/app.js')}}"></script>
+	<script src="{{url_for('static', filename='js/init.js')}}"></script>
 	<script src="{{url_for('static', filename='js/views/game.js')}}"></script>
 	<script src="{{url_for('static', filename='js/models/game.js')}}"></script>
+	<script src="{{url_for('static', filename='js/app.js')}}"></script>
 	<script type="text/javascript">
-		console.log(grit);
-		new grit.Views.Game();
+		$(function(){
+	  	grit.Collections.Game.url = '{{ url_for("new_game") }}';
+	  	
+		}) ();
 	</script>
 </body>
 </html>

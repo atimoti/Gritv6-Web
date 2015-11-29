@@ -1,8 +1,8 @@
 /*global grit, Backbone*/
-grit.Views.Game = Backbone.View.extend({
+grit.Views.Game = new Backbone.View.extend({
     defaults: {
         "Opponent": grit.Models.Player,
-        "Me": grit.Models.Player,
+        "Me": grit.Models.Player
         
     },
     
@@ -10,7 +10,7 @@ grit.Views.Game = Backbone.View.extend({
     
     initialize: function () {
         //get grit from database
-        this.model = new grit.Models.Game();
+        this.model = grit.Models.Game();
         this.model.fetch();
         
         //localize html references
