@@ -7,7 +7,8 @@ grit.Views.Grit = Backbone.View.extend({
     template: _.template($("#gritTemplate").html()),
     
     initialize: function () {
-      this.model.fetch();
+      // this.model.fetch();
+      console.log(this.model.fetch());
       this.render();
     },
     
