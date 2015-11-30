@@ -10,7 +10,7 @@ grit.Router = Backbone.Router.extend({
     },
     
     startGame : function (gameID){
-        new grit.Models.Game({ "_id": gameID });
+        new grit.Models.Game({ "id": gameID });
         console.log("todo get game with ID: " + gameID)
     }
 });
