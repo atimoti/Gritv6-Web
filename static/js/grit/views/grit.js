@@ -2,7 +2,7 @@
 grit.Views.Grit = Backbone.View.extend({
     defaults: {
         model: grit.Models.Game,
-        game: 
+        game: {}
     },
     el: "#main",
     template: _.template($("#gritTemplate").html()),
