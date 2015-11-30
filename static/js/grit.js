@@ -6,4 +6,3 @@ console.log(grit);
 
 
 new grit.Router();
-Backbone.history.start( {pushState: true} );
