@@ -24,13 +24,36 @@
 	<script src="/js/init.js"></script>
 	
 	<!--initialize Templates-->
-	<!--<script type=text/template src="../templates/navbar.html"></script>-->
-	<!--<script type=text/template src="../templates/sidePanel.html"></script>-->
-	<!--<script type=text/template src="../templates/grit.html"></script>-->
-	<script type="text/javascript">
-		$.get("navbar.html");
-		$.get("sidePanel.html");
-		$.get("grit.html");
+	<script type="text/template" id="navbarTemplate">
+    <% _.each(navObjs, function(navObj) { %>
+      <div id= <%= navObj.id %> > <%= navObj %> </div> 
+    <% }); %>
+	</script>
+	<script type="text/template" id="gritTemplate">
+	  <div id="opponent">
+			<div class="hand"> <%= game %> </div>
+			<div class="board">
+				<div class="slot">
+					<img src="/Grit_Cards/2H.svg" height=100% width=100%>
+				</div>
+				<div class="slot">slot</div>
+				<div class="slot">slot</div>
+			</div>
+		</div>
+		<div id="home">
+			<div class="board">
+				<div class="slot">
+					<img src="/Grit_Cards/back.svg" height=100% width=100%>
+				</div>
+				<div class="slot"></div>
+				<div class="slot">slot</div>
+			</div>
+			<div class="hand"></div>
+		</div>
+	</script>
+	<script type="text/template" id="sidePanelTemplate">
+    <div id="user"> <%= user.id %> </div>
+    <div id="stats"> <%= user.rating %> </div>
 	</script>
 	
 	<!--extend Backbone Model constructors-->
