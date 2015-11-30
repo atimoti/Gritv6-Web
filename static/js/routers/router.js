@@ -2,7 +2,7 @@
 
 grit.Router = Backbone.Router.extend({
     routes: {
-        "/game/:gameID/" : "startGame"
+        "game/:gameID" : "startGame"
     },
     initialize: function () {
         console.log("initialized the router")
