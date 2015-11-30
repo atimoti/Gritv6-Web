@@ -1,7 +1,7 @@
-/*global settings, _, Backbone*/
-settings.Views.Navbar = Backbone.View.extend({
+/*global app, _, Backbone*/
+app.Views.Navbar = Backbone.View.extend({
     defaults: {
-        model: settings.Models.Navbar,
+        model: app.Models.Navbar,
         navObjs: []
     },
     el: "#navbar",

@@ -31,7 +31,7 @@
 	</script>
 	<script type="text/template" id="gritTemplate">
 	  <div id="opponent">
-			<div class="hand"> <%= game %> </div>
+			<div class="hand"> <%= game.players %> </div>
 			<div class="board">
 				<div class="slot">
 					<img src="/Grit_Cards/2H.svg" height=100% width=100%>
@@ -62,9 +62,9 @@
 	<!--extend Backbone Collection constructors-->
 	
 	<!--extend Backbone View constructors-->
-	<script src="/js/settings/views/navbar.js"></script>
+	<script src="/js/app/views/navbar.js"></script>
 	<script src="/js/grit/views/grit.js"></script>
-	<script src="/js/settings/views/sidePanel.js"></script>
+	<script src="/js/app/views/sidePanel.js"></script>
 	
 	<!--extend Backbone Router constructors-->
 	<script src="/js/grit/routers/router.js"></script>

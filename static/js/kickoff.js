@@ -1,4 +1,4 @@
-/*global grit, settings*/
+/*global grit, app*/
 
-new settings.Views.Navbar();
-new settings.Views.SidePanel();
+new app.Views.Navbar();
+new app.Views.SidePanel();

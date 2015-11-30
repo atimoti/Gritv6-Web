@@ -1,7 +1,7 @@
-/*global grit, settings*/
+/*global grit, app*/
 
 var grit = grit || {};
-var settings = settings || {};
+var app = app || {};
 
 (function() {
     
@@ -13,7 +13,7 @@ var settings = settings || {};
         Routers: []
     };
     
-    settings = {
+    app = {
         Models: [],
         Views: [],
         Collections: [],

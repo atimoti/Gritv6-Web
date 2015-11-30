@@ -1,7 +1,7 @@
-/*global settings, _, Backbone*/
-settings.Views.SidePanel = Backbone.View.extend({
+/*global app, _, Backbone*/
+app.Views.SidePanel = Backbone.View.extend({
     defaults: {
-        model: settings.Models.Player,
+        model: app.Models.Player,
         user: {"id":0, "rating":1200}
     },
     el: "#sidePanel",
