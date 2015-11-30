@@ -7,7 +7,6 @@ grit.Views.Grit = Backbone.View.extend({
     template: _.template($("#gritTemplate").html()),
     
     initialize: function () {
-      this.model = new grit.Models.Game()
       this.model.fetch();
       this.render();
     },
