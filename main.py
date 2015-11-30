@@ -26,10 +26,10 @@ def index():
     _games = jsonify(games.find())
     return render_template('index.html', games = _games)
     
-# @app.route('/game/<int:gameID>', methods=['GET', 'POST'])
-# def game(gameID):
-#     _game = games.find_one({"_id" : gameID})
-#     return jsonify( **_game )
+@app.route('/game/<int:gameID>', methods=['GET', 'POST'])
+def game(gameID):
+    _game = games.find_one({"_id" : gameID})
+    return jsonify( **_game )
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))
