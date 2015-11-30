@@ -9,9 +9,6 @@ grit.Views.Game = Backbone.View.extend({
     el: "#main",
     
     initialize: function () {
-        //get grit from database
-        this.model = new grit.Models.Game();
-        this.model.fetch();
         
         //localize html references
         this.$opponent = this.$("#opponent");
