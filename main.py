@@ -23,8 +23,7 @@ games.insert_one({"_id":1, "players": [{"_id": "rich", "info": {"rating": 1200, 
 
 @app.route('/')
 def index():
-    _games = jsonify(games.find())
-    return render_template('index.html', games = _games)
+    return render_template('index.html')
     
 @app.route('/game/<int:gameID>', methods=['GET', 'POST'])
 def game(gameID):

@@ -7,59 +7,36 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-	<div id="sidePanel">
-		side Panel!
-		<div id="user">
-			Rich
-		</div>
-		<div id="stats">
-			Stats here!
-		</div>
-		<chat>
-			Chat box!
-		</chat>
-	</div> 
+	
+	<!--only the most high-level elements. the rest will be dynamically rendered inside these atomic parts-->
+	<div id="sidePanel"></div> 
 	<div id="mainPanel">
-		<nav id="navbar">
-			{{game}}
-		</nav>
-		<div id="main">
-			<div id="opponent">
-				<div class="hand">
-					Opponent's hand
-				</div>
-				<div class="board">
-					<div class="slot">
-						<img src="/Grit_Cards/2H.svg" height=100% width=100%>
-					</div>
-					<div class="slot">slot</div>
-					<div class="slot">slot</div>
-				</div>
-			</div>
-			<div id="home">
-				<div class="board">
-					<div class="slot">
-						<img src="/Grit_Cards/back.svg" height=100% width=100%>
-					</div>
-					<div class="slot">
-					</div>
-					<div class="slot">slot</div>
-				</div>
-				<div class="hand">
-					My hand
-				</div>
-			</div>
-		</div>
+		<nav id="navbar"></nav>
+		<div id="main"></div>
 	</div>
+	
+	<!--load the required libraries-->
 	<script src="/js/lib/underscore.js"></script>
 	<script src="/js/lib/jquery.js"></script>
 	<script src="/js/lib/backbone.js"></script>
-	<script src="/js/init.js"></script>
-	<script src="/js/views/game.js"></script>
-	<script src="/js/models/game.js"></script>
-	<script src="/js/routers/router.js"></script>
-	<script src="/js/grit.js"></script>
 	
-	<script type="text/javascript">	</script>
+	<!--intialize the app's namespacing-->
+	<script src="/js/init.js"></script>
+	
+	<!--extend Backbone Model constructors-->
+	<script src="/js/grit/models/game.js"></script>
+	
+	<!--extend Backbone Collection constructors-->
+	
+	<!--extend Backbone View constructors-->
+	<script src="/js/settings/views/navbar.js"></script>
+	<script src="/js/grit/views/grit.js"></script>
+	<script src="/js/settings/views/sidePanel.js"></script>
+	
+	<!--extend Backbone Router constructors-->
+	<script src="/js/grit/routers/router.js"></script>
+	
+	<!--kickoff the app-->
+	<script src="/js/grit.js"></script>
 </body>
 </html>
