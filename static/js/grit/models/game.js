@@ -8,9 +8,10 @@ grit.Models.Game = Backbone.Model.extend({
     
     urlRoot: "/game",
     
+    // convert the schema used on the backend to what will be used on the frontend
     initialize: function () {
-        // this.game = this.fetch(); already being done in the view
-        // this.players = this.game.players;
+        this.game = this.fetch().toJSON();
+        this.players = this.game.players;
         
     },
     
