@@ -2,10 +2,15 @@
 grit.Views.Grit = Backbone.View.extend({
     defaults: {
         model: grit.Models.Game,
-        game: {}
     },
     el: "#main",
     template: _.template($("#gritTemplate").html()),
+    
+    initialize: function () {
+      this.model = new grit.Models.Game()
+      this.model.fetch();
+      this.render();
+    },
     
     render: function () {
         this.$el.html(this.template(this.model.toJSON()));

@@ -7,6 +7,7 @@ settings.Views.Navbar = Backbone.View.extend({
     el: "#navbar",
     template: _.template($("#navbarTemplate").html()),
     
+    
     render: function () {
         this.$el.html(this.template(this.model.toJSON()));
         return this;
