@@ -6,9 +6,10 @@ grit.Router = Backbone.Router.extend({
     },
     
     startGame : function (gameID){
+	  	grit.Models.Game.url = '{{ url_for( "game" ) }}'
         console.log("todo get game with ID: " + gameID)
     }
 });
 
-new grit.Router()
+new grit.Router();
 Backbone.history.start();
