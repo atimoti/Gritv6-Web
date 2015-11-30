@@ -24,9 +24,14 @@
 	<script src="/js/init.js"></script>
 	
 	<!--initialize Templates-->
-	<script type=text/template src="../templates/navbar.html"></script>
-	<script type=text/template src="../templates/sidePanel.html"></script>
-	<script type=text/template src="../templates/grit.html"></script>
+	<!--<script type=text/template src="../templates/navbar.html"></script>-->
+	<!--<script type=text/template src="../templates/sidePanel.html"></script>-->
+	<!--<script type=text/template src="../templates/grit.html"></script>-->
+	<script type="text/javascript">
+		$.get("navbar.html");
+		$.get("sidePanel.html");
+		$.get("grit.html");
+	</script>
 	
 	<!--extend Backbone Model constructors-->
 	<script src="/js/grit/models/game.js"></script>
