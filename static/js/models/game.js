@@ -5,7 +5,7 @@ grit.Models.Game = Backbone.Model.extend({
         Players: []
     },
     
-    urlRoot: "/game/",
+    urlRoot: "/game",
     
     initialize: function () {
         this.game = this.fetch();
