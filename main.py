@@ -29,7 +29,7 @@ def index():
 @app.route('/game/<int:gameID>', methods=['GET', 'POST'])
 def game(gameID):
     _game = games.find_one({"_id" : gameID})
-    return jsonify( **_game.to_json() )
+    return jsonify( **_game )
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))
