@@ -1,8 +1,9 @@
-/* global grit */
+/* global grit, Backbone */
 
 // The launching point for the grit app
 
 console.log(grit);
 
-//Load the View
-new grit.Views.Game();
+
+new grit.Router();
+Backbone.history.start( {pushState: true} );
