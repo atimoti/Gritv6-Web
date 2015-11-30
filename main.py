@@ -26,7 +26,7 @@ def index():
     _games = jsonify(games.find())
     return render_template('index.html', games = _games)
     
-@app.route('/game/<int:gameID>/', methods=['GET', 'POST'])
+@app.route('/game/<int:gameID>/', methods=['GET'])
 def game(gameID):
     _game = games.find_one({"_id" : gameID})
     return jsonify( **_game )
