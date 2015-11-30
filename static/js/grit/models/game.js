@@ -10,7 +10,7 @@ grit.Models.Game = Backbone.Model.extend({
     
     initialize: function () {
         // this.game = this.fetch(); already being done in the view
-        this.players = this.game.players;
+        // this.players = this.game.players;
         
     },
     
