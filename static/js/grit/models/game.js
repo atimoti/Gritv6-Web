@@ -10,7 +10,7 @@ grit.Models.Game = Backbone.Model.extend({
     
     // convert the schema used on the backend to what will be used on the frontend
     initialize: function () {
-        this.game = this.fetch().toJSON();
+        this.game = this.fetch();
         this.players = this.game.players;
         
     },
