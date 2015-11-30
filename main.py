@@ -11,12 +11,13 @@ import os
 app = Flask(__name__, static_url_path='')
 app.debug = True
 
-MONGOLAB_URI = os.getenv('MONGOLAB_URI')
 
-if MONGOLAB_URI:
-    connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
-else:
-    connection = pymongo.MongoClient("mongodb://localhost")
+# MONGOLAB_URI = os.getenv('MONGOLAB_URI')
+
+# if MONGOLAB_URI:
+connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
+# else:
+#     connection = pymongo.MongoClient("mongodb://localhost")
     
 db = connection.grit
 games = db.games
