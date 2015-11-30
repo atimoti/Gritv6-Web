@@ -4,5 +4,3 @@
 
 console.log(grit);
 
-
-new grit.Router();
