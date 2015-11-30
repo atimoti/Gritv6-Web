@@ -11,7 +11,8 @@ import os
 app = Flask(__name__.split('.')[0], static_url_path='')
 app.debug = True
 
-connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
+# connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
+connection = pymongo.MongoClient("mongodb://localhost")
 db = connection.grit
 games = db.games
 games.remove()
