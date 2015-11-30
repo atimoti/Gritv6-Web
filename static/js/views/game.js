@@ -1,5 +1,5 @@
 /*global grit, Backbone*/
-grit.Views.Game = new Backbone.View.extend({
+grit.Views.Game = Backbone.View.extend({
     defaults: {
         "Opponent": grit.Models.Player,
         "Me": grit.Models.Player

@@ -1,6 +1,6 @@
 /* global grit, Backbone */
 
-grit.Router = new Backbone.Router.extend({
+grit.Router = Backbone.Router.extend({
     routes: {
         "game/:gameID" : "startGame"
     },
@@ -10,4 +10,5 @@ grit.Router = new Backbone.Router.extend({
     }
 });
 
+new grit.Router()
 Backbone.history.start();

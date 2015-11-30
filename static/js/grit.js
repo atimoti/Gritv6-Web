@@ -5,4 +5,4 @@
 console.log(grit);
 
 //Load the View
-grit.Views.Game();
+new grit.Views.Game();

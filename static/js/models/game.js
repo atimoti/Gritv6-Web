@@ -1,5 +1,5 @@
 /*global grit, Backbone*/
-grit.Models.Game = new Backbone.Model.extend({
+grit.Models.Game = Backbone.Model.extend({
     defaults: {
         "Deck": grit.Models.Card,
         Players: []

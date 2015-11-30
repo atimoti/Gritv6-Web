@@ -15,7 +15,7 @@ connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
 db = connection.grit
 games = db.games
 games.remove()
-games.insert_one({"_id":1, "players": [{"_id": "bich", "info": {"rating": 420, "gamesPlayed": 0, "cards": ['2S', '3S', '4S', 'AH']}}, {"_id": "anthony",  "info": {"rating": 1200, "gamesPlayed": 0, "cards": ['5S', '6S', '7S', 'AS']}}]})
+games.insert_one({"_id":1, "players": [{"_id": "rich", "info": {"rating": 420, "gamesPlayed": 0, "cards": ['2S', '3S', '4S', 'AH']}}, {"_id": "anthony",  "info": {"rating": 1200, "gamesPlayed": 0, "cards": ['5S', '6S', '7S', 'AS']}}]})
 # games.insert_one({"players": [8, 9]})
 
 # _game = games.find_one()
