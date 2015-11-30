@@ -16,4 +16,4 @@ grit.Router = Backbone.Router.extend({
 });
 
 new grit.Router();
-Backbone.history.start();
+Backbone.history.start( {pushState: true} );
