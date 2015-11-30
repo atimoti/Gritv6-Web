@@ -60,13 +60,13 @@
 	<script src="{{url_for('static', filename='js/models/game.js')}}"></script>
 	<script src="{{url_for('static', filename='js/routers/router.js')}}"></script>
 	<script src="{{url_for('static', filename='js/grit.js')}}"></script>
-	// <script type="text/javascript">
-	// /* global Backbone */
-	// 	$(function(){
+	<script type="text/javascript">
+	/* global Backbone */
+		$(function(){
 	  	// Backbone.history.start();
-	//   	new 
+	  	grit.Models.Game.url = '{{ url_for( "game(gameID)" ) }}'
 	  	
-	// 	}) ();
-	// </script>
+		}) ();
+	</script>
 </body>
 </html>
