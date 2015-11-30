@@ -11,7 +11,13 @@ import os
 app = Flask(__name__, static_url_path='')
 app.debug = True
 
-connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
+MONGOLAB_URI = os.getenv('MONGOLAB_URI')
+
+if MONGOLAB_URI:
+    connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
+else:
+    connection = pymongo.MongoClient("mongodb://localhost")
+    
 db = connection.grit
 games = db.games
 games.remove()
@@ -32,9 +38,7 @@ def game(gameID):
     return jsonify( **_game )
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 8080))
-    host = os.getenv('IP', '0.0.0.0')
-    app.run(port=port, host=host)
+    app.run(port=8000)
 
 
 # app = Flask(__name__)
