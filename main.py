@@ -11,10 +11,10 @@ import os
 import dealer
 
 app = Flask(__name__.split('.')[0], static_url_path='')
-app.debug = True
 
 MONGOLAB_URI = os.getenv('MONGOLAB_URI')
 if MONGOLAB_URI == None:
+    app.debug = True
     connection = pymongo.MongoClient("mongodb://greyhat9-grit6-2187734/data/db")
 else:
     print(MONGOLAB_URI)
