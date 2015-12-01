@@ -17,7 +17,6 @@ if MONGOLAB_URI == None:
     print("NONE")
     app.debug = True
     connection = pymongo.MongoClient("mongodb://greyhat9-grit6-2187734/data/db")
-    host = os.getenv('IP', '127.0.0.1')
 else:
     print(MONGOLAB_URI)
     connection = pymongo.MongoClient(MONGOLAB_URI)
@@ -52,6 +51,7 @@ def getGame(gameID):
     return jsonify( **_game )
 
 if __name__ == '__main__':
+    host = os.getenv('IP', '127.0.0.1')
     port = int(os.getenv('PORT', 8000))
     app.run(port=port, host=host)
 
