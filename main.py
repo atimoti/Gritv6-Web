@@ -17,7 +17,9 @@ MONGOLAB_URI = os.getenv('MONGOLAB_URI')
 if MONGOLAB_URI == None:
     connection = pymongo.MongoClient("mongodb://greyhat9-grit6-2187734/data/db")
 else:
+    print(ma)
     connection = pymongo.MongoClient(MONGOLAB_URI)
+    
 db = connection.grit
 
 deck = db.deck
