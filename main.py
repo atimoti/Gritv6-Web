@@ -13,8 +13,11 @@ import dealer
 app = Flask(__name__.split('.')[0], static_url_path='')
 app.debug = True
 
-# connection = pymongo.MongoClient(os.getenv('MONGOLAB_URI'))
-connection = pymongo.MongoClient("mongodb://greyhat9-grit6-2187734/data/db")
+MONGOLAB_URI = os.getenv('MONGOLAB_URI')
+if MONGOLAB_URI == None:
+    connection = pymongo.MongoClient("mongodb://greyhat9-grit6-2187734/data/db")
+else:
+    connection = pymongo.MongoClient(MONGOLAB_URI)
 db = connection.grit
 
 deck = db.deck
