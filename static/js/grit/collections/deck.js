@@ -3,6 +3,12 @@ grit.Collections.Deck = Backbone.Collection.extend({
   model: grit.Models.Card,
   
   shuffle: function() {},
-  dealHand: function() {},
-  dealCard: function() {}
+  
+  dealHand: function() {
+    
+  },
+  
+  dealCard: function() {
+    
+  }
 })

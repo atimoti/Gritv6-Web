@@ -31,10 +31,14 @@
 	</script>
 	<script type="text/template" id="gritTemplate">
 	  <div id="opponent">
-			<div class="hand"> <%= game.players %> </div>
+			<div class="hand">
+				<% _.each(players, function(player) { %>
+      	<div id= <%= player._id %> > <%= player._id %> : <%= player.hand %> </div> 
+    		<% }); %>
+			</div>
 			<div class="board">
 				<div class="slot">
-					<img src="/Grit_Cards/2H.svg" height=100% width=100%>
+					<img src= <%= "/Grit_Cards/" + players[0].board + ".svg"%> height=100% width=100%>
 				</div>
 				<div class="slot">slot</div>
 				<div class="slot">slot</div>
@@ -43,7 +47,7 @@
 		<div id="home">
 			<div class="board">
 				<div class="slot">
-					<img src="/Grit_Cards/back.svg" height=100% width=100%>
+					<img src=<%= "/Grit_Cards/" + players[1].board + ".svg"%> height=100% width=100%>
 				</div>
 				<div class="slot"></div>
 				<div class="slot">slot</div>
