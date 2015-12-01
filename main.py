@@ -16,9 +16,11 @@ MONGOLAB_URI = os.getenv('MONGOLAB_URI')
 if MONGOLAB_URI == None:
     app.debug = True
     connection = pymongo.MongoClient("mongodb://greyhat9-grit6-2187734/data/db")
+    host = os.getenv('IP', '127.0.0.1')
 else:
     print(MONGOLAB_URI)
     connection = pymongo.MongoClient(MONGOLAB_URI)
+    host = "http://gritv6.herokuapp.com/"
     
 db = connection.grit
 
@@ -50,7 +52,6 @@ def getGame(gameID):
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8000))
-    host = os.getenv('IP', '127.0.0.1')
     app.run(port=port, host=host)
 
 
