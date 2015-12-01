@@ -14,6 +14,7 @@ app = Flask(__name__.split('.')[0], static_url_path='')
 
 MONGOLAB_URI = os.getenv('MONGOLAB_URI')
 if MONGOLAB_URI == None:
+    print("NONE")
     app.debug = True
     connection = pymongo.MongoClient("mongodb://greyhat9-grit6-2187734/data/db")
     host = os.getenv('IP', '127.0.0.1')
