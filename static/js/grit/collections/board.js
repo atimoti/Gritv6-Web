@@ -1,18 +1,20 @@
 /*global grit, Backbone*/
 
 grit.Collections.Board = Backbone.Collection.extend({
-  defaults: {
-    model: grit.Models.Slot
-  },
   
+  slots: [],
   
   //get current slots
-  initialize: function() {
+  initialize: function(slots) {
     console.log("initializing board...");
-    console.log(this);
     new grit.Views.Board({model: this});
+    this.addSlots(slots);
+  },
+  
+  addSlots: function(slots) {
+    for(var i = 0; i != 3; ++i){
+      this.slots.push(new grit.Collections.Slot(slots, {collection: this}));
+    }  
   }
-  
-  
   
 })

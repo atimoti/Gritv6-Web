@@ -1,12 +1,13 @@
 /*global grit, Backbone*/
 grit.Models.Card = Backbone.Model.extend({
+  
   defaults: {
     "card": "",
     "value": 0,
     "suit": "",
     "facedown": true,
     "order": 0,
-    "img": "/Grit_Cards/",
+    "imgRoot": "/Grit_Cards/",
     "selected": false
   },
   
@@ -20,7 +21,7 @@ grit.Models.Card = Backbone.Model.extend({
   
   extrapolate: function(card) {
     this.set("card", card);
-    this.set("src", this.get("img")+this.get("card")+".svg");
+    this.set("src", this.get("imgRoot")+this.get("card")+".svg");
     this.set("suit", card.charAt(card.length-1));
     var rank = card.substr(0, card.length-1);
     this.set("value", (rank === 'J' ? 10 : rank) );

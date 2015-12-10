@@ -9,13 +9,14 @@ body, html {
 /*end reset*/
 
 .highlighted {
-  border: 1px solid gold;
-
+  border: 5px solid gold;
 }
 
 #mainPanel {
+  flex-direction: column;
+  justify-content: space-around;
   height: 100%;
-  width: 70%;
+  width: 100%;
   
 }
 
@@ -42,26 +43,28 @@ body, html {
   width: 100%;
 }
 
+.card {
+  width: calc((100% - 10px)/4);
+  height: 100%;
+}
+
 .hand {
-  height: 50%;
+  height: 33%;
   width: 100%;
+  order: 2;
 }
 
 .board {
-  display: flex;
-  height: 50%;
+  height: 33%;
   width: 100%;
+  order: 1;
 }
 
 .slot {
-  border: 1px solid blue;
-  height: calc(100% - 2px); 
-}
-
-#sidePanel {
-  background-color: #ccc;
-  height: 100%;
-  width: 30%;
+  display: inline-flex;
+  border: 1px solid red;
+  width: calc((100% - 6px)/3);
+  height: calc(100% - 3px); 
 }
 
 #opponent {
@@ -72,44 +75,4 @@ body, html {
 #home {
   height: 50%;
   width: 100%;
-}
-
-@media handheld, screen and (max-width: 40em) {
-  #sidePanel {
-    display: none;
-  }
-  #mainPanel {
-    width: 100%;
-    background-color: red;
-    
-  }
-  #home {
-    background-color: red;
-  }
-}
-
-@media (orientation: landscape), screen and (min-width: 75em){
-  #home, #opponent {
-    display: flex;
-  }
-  .board {
-    height: 100%;
-    width: 60%;
-    order: 1;
-  }
-  
-  .hand {
-  height: 100%;
-  width: 40%;
-  order: 2;
-  }
-  
-  #sidePanel {
-    width: 15%;
-  }
-  
-  #mainPanel {
-    width: 85%;
-  }
-  
 }

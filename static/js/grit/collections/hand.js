@@ -1,8 +1,8 @@
 /*global grit, _, Backbone*/
 grit.Collections.Hand = Backbone.Collection.extend({
   
-  model: grit.Models.Card,
   selectedCard: null,
+  model: grit.Models.Card,
 
   initialize: function() {
     console.log("initializing hand...");

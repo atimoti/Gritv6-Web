@@ -2,5 +2,7 @@
 
 grit.Views.Game = Backbone.View.extend({
   
-  
+  initialize: function() {
+    
+  }
 });

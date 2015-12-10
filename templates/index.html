@@ -9,7 +9,6 @@
 <body>
 	
 	<!--only the most high-level elements. the rest will be dynamically rendered inside these atomic parts-->
-	<div id="sidePanel"></div> 
 	<div id="mainPanel">
 		<nav id="navbar"></nav>
 		<div id="main"></div>
@@ -64,18 +63,20 @@
 	</script>
 	
 	<!--extend Backbone Model constructors-->
-	<script src="/js/grit/models/game.js"></script>
 	<script src="/js/grit/models/card.js"></script>
-	<script src="/js/grit/models/slot.js"></script>
+	<script src="/js/grit/models/player.js"></script>
+	<script src="/js/grit/models/game.js"></script>
 	
 	<!--extend Backbone Collection constructors-->
 	<script src="/js/grit/collections/board.js"></script>
+	<script src="/js/grit/collections/slot.js"></script>
 	<script src="/js/grit/collections/hand.js"></script>
 	
 	<!--extend Backbone View constructors-->
 	<script src="/js/app/views/navbar.js"></script>
 	<script src="/js/grit/views/game.js"></script>
 	<script src="/js/grit/views/board.js"></script>
+	<script src="/js/grit/views/slot.js"></script>
 	<script src="/js/grit/views/hand.js"></script>
 	<script src="/js/grit/views/card.js"></script>
 	<script src="/js/app/views/sidePanel.js"></script>

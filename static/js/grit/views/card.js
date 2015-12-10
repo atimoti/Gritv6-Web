@@ -12,7 +12,6 @@ grit.Views.Card = Backbone.View.extend({
     console.log("click registered");
     console.log("the "+this.model.get("card")+" was clicked");
     this.model.trigger("clickCard", this.model);
-    
   },
   
   initialize: function() {
@@ -22,24 +21,20 @@ grit.Views.Card = Backbone.View.extend({
     this.listenTo(this.model, 'add', this.render);
     this.listenTo(this.model, 'change:selected', this.toggleSelected);
   },
-  
-  toggleSelected: function() {
-    if(this.model.get("selected")){
-    console.log("toggleSelected");
-      this.$el.addClass("highlighted");
-    } else{
-      this.$el.removeClass("highlighted");
-    }
+    
+  toggleSelected: function(model, val, options) {
+    val ? this.$el.addClass("highlighted") : this.$el.removeClass("highlighted");
   },
   
-  render: function() {
+  render: function(model, val, options) {
+    grit.Controller.trigger("renderCard", this.model);
     $(".hand").append(this.$el);
-    console.log("rendered card view...");
+    console.log("tried rendering card view...");
     return this;
   }, 
   
-  remove: function() {
-    $(".hand").remove(this.$el);
+  remove: function(model, val, options) {
+    // this.parentEl.remove(this.$el);
     console.log("removed card view...");
     return this;
   }
