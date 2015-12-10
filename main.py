@@ -44,15 +44,15 @@ def getGame(gameID):
     hands = dealer.deal(cards)
     
     #update the two players with the new cards
-    games.update_one({"_id": gameID}, {'$set': {"players.0.hand": hands[0], "players.0.board": dealer.dealCard(cards)}})
-    games.update_one({"_id": gameID}, {'$set': {"players.1.hand": hands[1], "players.1.board": dealer.dealCard(cards)}})
+    games.update_one({"_id": gameID}, {'$set': {"players.0.hand": hands[0], "players.0.board.0": dealer.dealCard(cards)}})
+    games.update_one({"_id": gameID}, {'$set': {"players.1.hand": hands[1], "players.1.board.0": dealer.dealCard(cards)}})
     
     _game = games.find_one({"_id": gameID})
     return jsonify( **_game )
 
 if __name__ == '__main__':
-    host = os.getenv('IP', '0.0.0.0')
-    port = int(os.getenv('PORT', 8080))
+    host = os.getenv('$IP', '0.0.0.0')
+    port = int(os.getenv('$PORT', 8080))
     app.run(port=port, host=host)
 
 

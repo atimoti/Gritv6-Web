@@ -2,15 +2,15 @@
 
 grit.Collections.Board = Backbone.Collection.extend({
   defaults: {
-    model: grit.Models.Slot,
-    id: ""
+    model: grit.Models.Slot
   },
   
-  url: "/slot",
   
   //get current slots
   initialize: function() {
-    this.fetch();
+    console.log("initializing board...");
+    console.log(this);
+    new grit.Views.Board({model: this});
   }
   
   

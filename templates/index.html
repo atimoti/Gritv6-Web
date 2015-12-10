@@ -31,10 +31,10 @@
 	</script>
 	<script type="text/template" id="gritTemplate">
 	  <div id="opponent">
-			<div class="hand">
-				<% _.each(players, function(player) { %>
-      	<div id= <%= player._id %> > <%= player._id %> : <%= player.hand %> </div> 
-    		<% }); %>
+			<div class=”hand”>
+			  <% _.each(cards, function(card) { %>
+			    <img src= <%="/Grit_Cards/"+ card + ".svg"%> >
+			  <% }); %>
 			</div>
 			<div class="board">
 				<div class="slot">
@@ -59,21 +59,32 @@
     <div id="user"> <%= user.id %> </div>
     <div id="stats"> <%= user.rating %> </div>
 	</script>
+	<script type="text/template" id="cardTemplate">
+		<img src= <%=src%> >
+	</script>
 	
 	<!--extend Backbone Model constructors-->
 	<script src="/js/grit/models/game.js"></script>
+	<script src="/js/grit/models/card.js"></script>
+	<script src="/js/grit/models/slot.js"></script>
 	
 	<!--extend Backbone Collection constructors-->
+	<script src="/js/grit/collections/board.js"></script>
+	<script src="/js/grit/collections/hand.js"></script>
 	
 	<!--extend Backbone View constructors-->
 	<script src="/js/app/views/navbar.js"></script>
-	<script src="/js/grit/views/grit.js"></script>
+	<script src="/js/grit/views/game.js"></script>
+	<script src="/js/grit/views/board.js"></script>
+	<script src="/js/grit/views/hand.js"></script>
+	<script src="/js/grit/views/card.js"></script>
 	<script src="/js/app/views/sidePanel.js"></script>
+	
+	<!--Controllers-->
+	<script src="/js/grit/controller.js"></script>
 	
 	<!--extend Backbone Router constructors-->
 	<script src="/js/app/routers/router.js"></script>
 	
-	<!--kickoff the app-->
-	<script src="/js/kickoff.js"></script>
 </body>
 </html>

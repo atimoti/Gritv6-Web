@@ -18,7 +18,7 @@ def shuffle(thisDeck, seed=0):
 def dealCard(cards):
     rand = randint(0, len(cards)-1)
     card = cards[rand]
-    cards.remove(card) #remove the card from the cards
+    cards.remove(card) 
     return card
 
 #returns 2 hands of 4 cards

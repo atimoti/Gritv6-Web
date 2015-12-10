@@ -8,9 +8,15 @@ body, html {
 }
 /*end reset*/
 
+.highlighted {
+  border: 1px solid gold;
+
+}
+
 #mainPanel {
   height: 100%;
   width: 70%;
+  
 }
 
 #navbar {
@@ -23,6 +29,7 @@ body, html {
   background-color: #5d5;
   height: 90%;
   width: 100%;
+  border-radius:.5em;
 }
 
 #opponent {
@@ -48,8 +55,7 @@ body, html {
 
 .slot {
   border: 1px solid blue;
-  height: calc(100% - 2px);
-  width: calc( (100% - 4px)/3);
+  height: calc(100% - 2px); 
 }
 
 #sidePanel {
@@ -74,6 +80,8 @@ body, html {
   }
   #mainPanel {
     width: 100%;
+    background-color: red;
+    
   }
   #home {
     background-color: red;

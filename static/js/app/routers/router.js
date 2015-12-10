@@ -12,11 +12,15 @@ app.Routers.Router = Backbone.Router.extend({
     
     //loads the game given the gameID number, happens once
     startGame: function (gameID) {
+      console.log("Starting game with id: "+ gameID);
+      
       var game = new grit.Models.Game({"_id": gameID});
+      
+      new grit.Controller.initialize(game);
+      
+      console.log("fetching game...");
       game.fetch();
-      var temp = new grit.Views.Grit( {model: game} );
-          
-      console.log("todo get game with ID: " + gameID);
+      console.log("fetched game...");
     }
     
 });
