@@ -21,7 +21,7 @@ grit.Models.Game = Backbone.Model.extend({
   buildGame: function() {
     var that = this;
     _.each(this.get("players"), function(player){
-      that.boards.push(new grit.Collections.Board(player.board, {id: player.id}));
+      that.boards.push(new grit.Models.Board(player.board, {id: player.id}));
     });
     
     this.hand  = new grit.Collections.Hand(this.get("players")[0].hand);

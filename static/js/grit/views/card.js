@@ -28,7 +28,7 @@ grit.Views.Card = Backbone.View.extend({
   
   render: function(model, val, options) {
     grit.Controller.trigger("renderCard", this.model);
-    $(".hand").append(this.$el);
+    grit.Controller.getEl(this.model.collection).append(this.$el);
     console.log("tried rendering card view...");
     return this;
   }, 

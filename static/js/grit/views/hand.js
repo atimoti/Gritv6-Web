@@ -5,6 +5,7 @@ grit.Views.Hand = Backbone.View.extend({
 
   initialize: function() {
     console.log("creating the hand's view...");
+    grit.Controller.mapEl(this.collection, this.$el);
     this.render();
   },
   
