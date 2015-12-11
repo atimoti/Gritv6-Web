@@ -5,6 +5,7 @@ grit.Views.Slot = Backbone.View.extend({
     className: "slot",
     
     initialize: function() {
+      grit.Controller.mapEl(this.collection, this.$el);
       this.render();
     },
     

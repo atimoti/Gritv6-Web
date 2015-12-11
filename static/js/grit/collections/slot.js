@@ -1,6 +1,6 @@
 /*global grit, Backbone*/
 grit.Collections.Slot = Backbone.Collection.extend({
-    // model: grit.Models.Card,
+    model: grit.Models.Card,
     defaults: {
       "cards": [ ],
       "playable": true,
