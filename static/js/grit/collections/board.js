@@ -7,7 +7,8 @@ grit.Collections.Board = Backbone.Collection.extend({
   //get current slots
   initialize: function(slots) {
     console.log("initializing board...");
-    new grit.Views.Board({model: this});
+    console.log(slots);
+    new grit.Views.Board({collection: this});
     this.addSlots(slots);
   },
   
