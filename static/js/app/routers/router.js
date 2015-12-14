@@ -14,9 +14,10 @@ app.Routers.Router = Backbone.Router.extend({
     startGame: function (gameID) {
       console.log("Starting game with id: "+ gameID);
       
-      var game = new grit.Models.Game({"_id": gameID});
+      grit.Game = new grit.Models.Game({"_id": gameID});
       console.log("fetching game...");
-      game.fetch();
+    
+      grit.Game.fetch();
       console.log("fetched game...");
     }
     

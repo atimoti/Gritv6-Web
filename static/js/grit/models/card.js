@@ -5,7 +5,7 @@ grit.Models.Card = Backbone.Model.extend({
     "card": "",
     "value": 0,
     "suit": "",
-    "facedown": true,
+    "facedown": false,
     "order": 0,
     "imgRoot": "/Grit_Cards/",
     "selected": false
@@ -25,6 +25,6 @@ grit.Models.Card = Backbone.Model.extend({
     this.set("suit", card.charAt(card.length-1));
     var rank = card.substr(0, card.length-1);
     this.set("value", (rank === 'J' ? 10 : rank) );
-  },
+  }
   //End initialization
 })
