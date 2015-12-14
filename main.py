@@ -17,6 +17,7 @@ if MONGOLAB_URI == None:
     print("NONE")
     app.debug = True
     connection = pymongo.MongoClient("mongodb://greyhat9-grit6-2187734/data/db")
+    connection = pymongo.MongoClient("mongodb://atimoti-gritv6-2281741/data/db")
 else:
     print(MONGOLAB_URI)
     connection = pymongo.MongoClient(MONGOLAB_URI)
