@@ -6,6 +6,9 @@ grit.Models.Game = Backbone.Model.extend({
     defaults: {
       players: []
     },
+    
+    gameTree: { },
+    
     boards: [ ],
     hand: { },
     
@@ -14,9 +17,9 @@ grit.Models.Game = Backbone.Model.extend({
   initialize: function() {
     console.log("initializing game: ");
     new grit.Controller.initialize(this);
-    new grit.Views.Game({model: this});
     this.listenTo(this, 'sync', this.buildGame);
-    }, 
+    new grit.Views.Game({model: this});
+  },
     
   buildGame: function() {
     var that = this;
@@ -26,4 +29,4 @@ grit.Models.Game = Backbone.Model.extend({
     
     this.hand  = new grit.Collections.Hand(this.get("players")[0].hand);
   },
-})
+}, Backbone.Events)
